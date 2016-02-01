@@ -10825,8 +10825,7 @@ $('polyline').css({strokeLinecap:"round"});
 $(polyArr).qtip({
 	content: {
 	    text: function(event, api) {
-//	    	return $(this).attr('textContent');
-	    	return $(this).attr('textContent')+' - '+$(this).attr('projectName');
+	    	return $(this).attr('projectName')+' - '+$(this).attr('textContent');
 		},
 	    title: function(event, api) {
 	    	return $(this).attr('title');
@@ -10847,9 +10846,9 @@ function lineDisplay(){
 	lines = flux[this.id];
 	$('polygon').not('#'+this.id).css({opacity:'0.25'});
 	$('#'+this.id).css({strokeWidth:0.8});	
-	$('polyline.'+lines).fadeIn(200);
+	$('polyline.'+lines).fadeIn(350);
 	$('polyline.'+lines).css({pointerEvents:'none'});	
-	$('circle.'+lines).fadeIn(200);
+	$('circle.'+lines).fadeIn(350);
 	$('circle.'+lines).css({pointerEvents:'none'});
 	$('polyline.'+lines).animate({strokeDashoffset: 0},800);
 };
